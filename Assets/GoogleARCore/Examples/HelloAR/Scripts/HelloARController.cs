@@ -40,12 +40,19 @@ namespace GoogleARCore.Examples.HelloAR
 
         public GameObject location2;
 
+        public GameObject centerPoint;
+
         public GamesRules gamesRules;
 
         private GameObject prefab;
 
+        public GameObject firstPoint;
+
+        public GameObject secondPoint;
+
         public bool loc1;
         public bool loc2;
+        public bool cent1;
         public bool gameStart;
         public bool prefabStopper;
 
@@ -96,6 +103,7 @@ namespace GoogleARCore.Examples.HelloAR
         {
             loc1 = false;
             loc2 = false;
+            cent1 = false;
             gameStart = false;
             prefabStopper = false;
         }
@@ -111,7 +119,7 @@ namespace GoogleARCore.Examples.HelloAR
             {
                 gameStart = true;
                 prefab = null;
-                gamesRules.PlaySpace(); 
+                //gamesRules.PlaySpace(); ///////////////////////////////////////////////////<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
             }
 
             // If the player has not touched the screen, we are done with this update.
@@ -144,19 +152,39 @@ namespace GoogleARCore.Examples.HelloAR
                 }
                 else
                 {
-                    //GameObject prefab;
-                    if (loc1 == false)
+                    //GameObject prefab;                    
+                    if (cent1 == true && prefabStopper == false)
                     {
-                        prefab = location1;
-                        loc1 = true; 
+                        firstPoint = GameObject.FindGameObjectWithTag("Cube1");
+                        secondPoint = GameObject.FindGameObjectWithTag("Cube2");
+                        prefab = centerPoint;
+                        Vector3 vec3 = (firstPoint.transform.position + secondPoint.transform.position) / 2;
+                        Instantiate(prefab, vec3, transform.rotation);
+                        prefabStopper = true;
                     }
+
                     else if (loc2 == false && loc1 == true) //if (GameObject.FindWithTag("Cube1") == false)
                     {
                         prefab = location2; //GameObjectHorizontalPlanePrefab;
                         loc2 = true;
-                        prefabStopper = true;
+                        //location1 = GameObject.Find("Cube1");
+                        if (loc1 == true && loc2 == true)
+                        {
+
+                            cent1 = true;
+                            loc1 = false;
+                            loc2 = false;
+
+                        }
                         //I need something to stop the player tapping the screen after this.
                     }
+
+                    else if (loc1 == false && cent1 == false)
+                    {
+                        prefab = location1;
+                        loc1 = true;
+                    }
+
                     else
                     {
                         prefab = null;
@@ -218,7 +246,7 @@ namespace GoogleARCore.Examples.HelloAR
                 }
             }
         }
-        
+
         /// <summary>
         /// Check and update the application lifecycle.
         /// </summary>
@@ -261,6 +289,7 @@ namespace GoogleARCore.Examples.HelloAR
                 Invoke("_DoQuit", 0.5f);
             }
         }
+        
 
         /// <summary>
         /// Actually quit the application.

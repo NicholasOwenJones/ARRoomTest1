@@ -154,6 +154,8 @@ MonoBehaviour:
     type: 3}
   location2: {fileID: 7200984034689223641, guid: 5ed4d8b48fd648348b4ba5da488331ef,
     type: 3}
+  centerPoint: {fileID: 7200984034689223641, guid: 684639f0d1d8b4044a44a20635f50795,
+    type: 3}
   gamesRules: {fileID: 821054124}
   loc1: 0
   loc2: 0
@@ -499,7 +501,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &821054124
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -507,7 +509,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 821054123}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: be84423f9a57ccf49ad275bdf900e32c, type: 3}
   m_Name: 
@@ -660,6 +662,60 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cf498fc35b538884db557f7a9a2c0ef9, type: 3}
+--- !u!1 &1421869934
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1421869936}
+  - component: {fileID: 1421869935}
+  m_Layer: 0
+  m_Name: HelloARController (backup)
+  m_TagString: HelloARGO
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!114 &1421869935
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1421869934}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 26074b15f9c13404d858bfedb8b8c00c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  location1: {fileID: 7200984034689223641, guid: 1ba6e2d303aca1146a1c39b41259efd0,
+    type: 3}
+  location2: {fileID: 7200984034689223641, guid: 5ed4d8b48fd648348b4ba5da488331ef,
+    type: 3}
+  centerPoint: {fileID: 0}
+  gamesRules: {fileID: 821054124}
+  loc1: 0
+  loc2: 0
+  gameStart: 0
+  prefabStopper: 0
+  FirstPersonCamera: {fileID: 1038678620}
+--- !u!4 &1421869936
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1421869934}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 10
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1817293528
 GameObject:
   m_ObjectHideFlags: 0
