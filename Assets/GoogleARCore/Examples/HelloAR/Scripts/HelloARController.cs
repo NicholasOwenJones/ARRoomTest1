@@ -50,6 +50,8 @@ namespace GoogleARCore.Examples.HelloAR
 
         public GameObject secondPoint;
 
+        TrackableHit hit;
+
         public bool loc1;
         public bool loc2;
         public bool cent1;
@@ -115,10 +117,11 @@ namespace GoogleARCore.Examples.HelloAR
         {
             _UpdateApplicationLifecycle();
 
-            if (loc1 == true && loc2 == true)//&& gameStart == false
+            if (loc1 == true && loc2 == true && gameStart == false)
             {
                 gameStart = true;
                 prefab = null;
+                _CentrePoint();
                 //gamesRules.PlaySpace(); ///////////////////////////////////////////////////<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
             }
 
@@ -136,7 +139,7 @@ namespace GoogleARCore.Examples.HelloAR
             }
 
             // Raycast against the location the player touched to search for planes.
-            TrackableHit hit;
+            //TrackableHit hit;
             TrackableHitFlags raycastFilter = TrackableHitFlags.PlaneWithinPolygon |
                 TrackableHitFlags.FeaturePointWithSurfaceNormal;
 
@@ -151,40 +154,20 @@ namespace GoogleARCore.Examples.HelloAR
                     Debug.Log("Hit at back of the current DetectedPlane");
                 }
                 else
-                {
-                    //GameObject prefab;                    
-                    if (cent1 == true && prefabStopper == false)
+                {                    
+                    if (loc1 == false && cent1 == false)
                     {
+                        prefab = location1;
                         firstPoint = GameObject.FindGameObjectWithTag("Cube1");
-                        secondPoint = GameObject.FindGameObjectWithTag("Cube2");
-                        prefab = centerPoint;
-                        Vector3 vec3 = (firstPoint.transform.position + secondPoint.transform.position) / 2;
-                        Instantiate(prefab, vec3, transform.rotation);
-                        prefabStopper = true;
+                        loc1 = true;
                     }
-
                     else if (loc2 == false && loc1 == true) //if (GameObject.FindWithTag("Cube1") == false)
                     {
                         prefab = location2; //GameObjectHorizontalPlanePrefab;
+                        secondPoint = GameObject.FindGameObjectWithTag("Cube2");
                         loc2 = true;
-                        //location1 = GameObject.Find("Cube1");
-                        if (loc1 == true && loc2 == true)
-                        {
-
-                            cent1 = true;
-                            loc1 = false;
-                            loc2 = false;
-
-                        }
-                        //I need something to stop the player tapping the screen after this.
+                        //_CentrePoint();
                     }
-
-                    else if (loc1 == false && cent1 == false)
-                    {
-                        prefab = location1;
-                        loc1 = true;
-                    }
-
                     else
                     {
                         prefab = null;
@@ -290,6 +273,26 @@ namespace GoogleARCore.Examples.HelloAR
             }
         }
         
+        //if both locations are placed this will run
+        public void _CentrePoint()
+        {
+            if (gameStart == true && cent1 == false)
+            {
+                firstPoint = GameObject.FindGameObjectWithTag("Cube1");
+                secondPoint = GameObject.FindGameObjectWithTag("Cube2");
+                Vector3 vec3 = (firstPoint.transform.position + secondPoint.transform.position) / 2;
+                var gameObt = Instantiate(centerPoint, vec3, transform.rotation);
+                gameObt.transform.Rotate(0, k_PrefabRotation, 0, Space.Self);// Compensate for the hitPose rotation facing away from the raycast (i.e. camera).
+                var anch = hit.Trackable.CreateAnchor(hit.Pose);// Create an anchor to allow ARCore to track the hitpoint as understanding of the physical world evolves.
+                gameObt.transform.parent = anch.transform;// Make game object a child of the anchor.
+                                                          //Instantiate(centerPoint, vec3, transform.rotation);
+                prefabStopper = true;
+
+                cent1 = true;
+                loc1 = false;
+                loc2 = false;
+            }
+        }
 
         /// <summary>
         /// Actually quit the application.
