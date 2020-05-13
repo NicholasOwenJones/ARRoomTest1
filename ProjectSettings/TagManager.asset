@@ -7,6 +7,10 @@ TagManager:
   - HelloARGO
   - Cube2
   - Cube1
+  - centre
+  - Char1
+  - Char2
+  - Char3
   layers:
   - Default
   - TransparentFX

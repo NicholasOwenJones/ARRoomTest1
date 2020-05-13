@@ -12,9 +12,10 @@ GameObject:
   - component: {fileID: 7200984034689223644}
   - component: {fileID: 7200984034689223647}
   - component: {fileID: 7200984034689223646}
+  - component: {fileID: -8424239451743147738}
   m_Layer: 0
   m_Name: CentPointRect
-  m_TagString: Untagged
+  m_TagString: centre
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -93,3 +94,35 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &-8424239451743147738
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7200984034689223641}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b4a70081d880b4144a10a12885a20836, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Character1: {fileID: 3204536048569259138, guid: 656a3ef89ec6a3a4096a544086e82677,
+    type: 3}
+  Character2: {fileID: 7789768144416987630, guid: 7c8cbdaebd4dbbd4ca86793cd7253e47,
+    type: 3}
+  Character3: {fileID: 3910361508957656971, guid: f2d15c59edd0b294194ae9303eec9ad7,
+    type: 3}
+  TestBox: {fileID: 5394135059125894745, guid: 5642ceda5007bdf44a89c089b7312258, type: 3}
+  diagonalLenth: 0
+  player: {fileID: 0}
+  cube1: {fileID: 0}
+  cube2: {fileID: 0}
+  centre: {fileID: 0}
+  cube1transf: {x: 0, y: 0, z: 0}
+  cube2transf: {x: 0, y: 0, z: 0}
+  cent_transf: {x: 0, y: 0, z: 0}
+  zero: {x: 0, y: 0, z: 0, w: 0}
+  char1int: 0
+  char2int: 0
+  char3int: 0
+  char1Sounds: {fileID: 8300000, guid: 2cb5cc90d82cbd04e8751d61224fe746, type: 3}

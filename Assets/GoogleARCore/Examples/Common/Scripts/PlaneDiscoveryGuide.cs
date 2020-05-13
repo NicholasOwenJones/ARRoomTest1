@@ -17,6 +17,8 @@
 //
 // </copyright>
 //-----------------------------------------------------------------------
+//
+// In line with above licence, this code has been adated from original code, found here: https://developers.google.com/ar/develop/unity/tutorials/hello-ar-sample
 
 namespace GoogleARCore.Examples.Common
 {

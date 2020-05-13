@@ -17,6 +17,9 @@
 //
 // </copyright>
 //-----------------------------------------------------------------------
+//
+// In line with above licence, this code has been adated from original code, found here: https://developers.google.com/ar/develop/unity/tutorials/hello-ar-sample
+
 
 namespace GoogleARCore.Examples.HelloAR
 {
@@ -36,27 +39,31 @@ namespace GoogleARCore.Examples.HelloAR
     /// </summary>
     public class HelloARController : MonoBehaviour
     {
-        public GameObject location1;
+        public GameObject location1; //The first cube prefab placed by the player
 
-        public GameObject location2;
+        public GameObject location2; //The second cube prefab placed by the player
 
-        public GameObject centerPoint;
+        public GameObject centerPoint; //the middle cube created by the game
 
-        public GamesRules gamesRules;
+        //public GamesRules  gamesRules;
 
         private GameObject prefab;
 
-        public GameObject firstPoint;
+        public GameObject firstPoint; //naming the first cube as a unique point/gameobject that the game can use from then on
 
-        public GameObject secondPoint;
+        public GameObject secondPoint; //naming the second cube as a unique point/gameobject that the game can use from then on
 
         TrackableHit hit;
 
+
+        //used to track when the player has placed each cube and the centre cube has been generated.
         public bool loc1;
         public bool loc2;
         public bool cent1;
+
+        //for when game is ready to start after player has placed both cubes.
         public bool gameStart;
-        public bool prefabStopper;
+        //public bool prefabStopper;
 
 
         /// <summary>
@@ -107,7 +114,7 @@ namespace GoogleARCore.Examples.HelloAR
             loc2 = false;
             cent1 = false;
             gameStart = false;
-            prefabStopper = false;
+            //prefabStopper = false;
         }
 
         /// <summary>
@@ -286,7 +293,7 @@ namespace GoogleARCore.Examples.HelloAR
                 var anch = hit.Trackable.CreateAnchor(hit.Pose);// Create an anchor to allow ARCore to track the hitpoint as understanding of the physical world evolves.
                 gameObt.transform.parent = anch.transform;// Make game object a child of the anchor.
                                                           //Instantiate(centerPoint, vec3, transform.rotation);
-                prefabStopper = true;
+                //prefabStopper = true;
 
                 cent1 = true;
                 loc1 = false;

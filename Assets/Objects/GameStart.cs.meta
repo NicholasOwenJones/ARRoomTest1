@@ -1,0 +1,24 @@
+fileFormatVersion: 2
+guid: b4a70081d880b4144a10a12885a20836
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - player: {instanceID: 0}
+  - Character1: {fileID: 3204536048569259138, guid: 656a3ef89ec6a3a4096a544086e82677,
+      type: 3}
+  - Character2: {fileID: 7789768144416987630, guid: 7c8cbdaebd4dbbd4ca86793cd7253e47,
+      type: 3}
+  - Character3: {fileID: 3910361508957656971, guid: f2d15c59edd0b294194ae9303eec9ad7,
+      type: 3}
+  - cube1: {instanceID: 0}
+  - cube2: {instanceID: 0}
+  - centre: {instanceID: 0}
+  - cube1transf: {instanceID: 0}
+  - cube2transf: {instanceID: 0}
+  - cent_transf: {instanceID: 0}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
