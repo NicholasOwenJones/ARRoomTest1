@@ -43,7 +43,7 @@ namespace GoogleARCore.Examples.HelloAR
 
         public GameObject location2; //The second cube prefab placed by the player
 
-        public GameObject centerPoint; //the middle cube created by the game
+        public GameObject centerPoint; //the middle cube created by the game prefab
 
         //public GamesRules  gamesRules;
 
@@ -52,6 +52,12 @@ namespace GoogleARCore.Examples.HelloAR
         public GameObject firstPoint; //naming the first cube as a unique point/gameobject that the game can use from then on
 
         public GameObject secondPoint; //naming the second cube as a unique point/gameobject that the game can use from then on
+
+        public GameObject centCube; // the name of the centre point cube
+
+        private List<GameObject> instanciatedObjects;
+
+        public GameObject[] gridSections;
 
         TrackableHit hit;
 
@@ -65,6 +71,9 @@ namespace GoogleARCore.Examples.HelloAR
         public bool gameStart;
         //public bool prefabStopper;
 
+        public float lengthX, lengthZ, divLenZ, divLenX; //play space lengths and object play space lenths
+        public int divisionAmount = 5; //how many parts to divide the x and z edges of the play space into.
+        public int gridGamObjTotal; //the total gameobjects that will make up the grid: divisionAmount*divisionAmount.
 
         /// <summary>
         /// The first-person camera being used to render the passthrough camera image (i.e. AR
@@ -279,27 +288,37 @@ namespace GoogleARCore.Examples.HelloAR
                 Invoke("_DoQuit", 0.5f);
             }
         }
-        
-        //if both locations are placed this will run
+
+        /// <summary>
+        /// If both locations are placed this will create a centre point.
+        /// </summary>
         public void _CentrePoint()
         {
             if (gameStart == true && cent1 == false)
             {
                 firstPoint = GameObject.FindGameObjectWithTag("Cube1");
                 secondPoint = GameObject.FindGameObjectWithTag("Cube2");
+
                 Vector3 vec3 = (firstPoint.transform.position + secondPoint.transform.position) / 2;
                 var gameObt = Instantiate(centerPoint, vec3, transform.rotation);
                 gameObt.transform.Rotate(0, k_PrefabRotation, 0, Space.Self);// Compensate for the hitPose rotation facing away from the raycast (i.e. camera).
                 var anch = hit.Trackable.CreateAnchor(hit.Pose);// Create an anchor to allow ARCore to track the hitpoint as understanding of the physical world evolves.
                 gameObt.transform.parent = anch.transform;// Make game object a child of the anchor.
-                                                          //Instantiate(centerPoint, vec3, transform.rotation);
-                //prefabStopper = true;
+
+                //distance between the first and second points on z and x.
+                lengthZ = Mathf.Abs(firstPoint.transform.position.z - secondPoint.transform.position.z);
+                lengthX = Mathf.Abs(firstPoint.transform.position.x - secondPoint.transform.position.x);
+
+                centCube = GameObject.FindWithTag("centre");
+                centCube.transform.localScale = new Vector3(lengthX, 0.1f, lengthZ);
 
                 cent1 = true;
                 loc1 = false;
                 loc2 = false;
             }
         }
+
+
 
         /// <summary>
         /// Actually quit the application.
@@ -331,5 +350,38 @@ namespace GoogleARCore.Examples.HelloAR
                 }));
             }
         }
+
+        /// <summary>
+        /// Code for dividing up the play space using game objects as a grid.
+        /// </summary>
+        //public void _PlaySpaceBlocks() //code for dividing up the play space using game objects as a grid
+        //{
+        //    //distance between the first and second points on z and x.
+        //    lengthZ = Mathf.Abs(firstPoint.transform.position.z - secondPoint.transform.position.z);
+        //    lengthX = Mathf.Abs(firstPoint.transform.position.x - secondPoint.transform.position.x);
+
+        //    //divLenZ divide up z into equal parts - How many parts? 5 I think.
+        //    //divLenX divide up x into equal parts - as above.
+        //    divLenZ = lengthZ / divisionAmount;
+        //    divLenX = lengthX / divisionAmount;
+        //    //divLenZ and X becomes each length and width of each gameobject.
+
+        //    //total numbe rof gameobjects
+        //    gridGamObjTotal = divisionAmount * divisionAmount;
+        //    instanciatedObjects = new List<GameObject>(gridGamObjTotal);
+
+        //    for (int i = 0; i < gridGamObjTotal; i++)
+        //    {
+        //        instanciatedObjects.Add(Instantiate(gridSections[i]) as GameObject);
+        //    }
+
+
+
+
+
+        //    //Place objects along X and Z.
+        //    //new GameObjects starting at lengthZ and lengthX divided by divisionAmount divided by 2.
+        //    //each GameObject after intial one, add divLenX for divisionAmount - 1, then add divLenZ something something something...
+        //}
     }
 }

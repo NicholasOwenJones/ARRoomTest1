@@ -11,6 +11,7 @@ TagManager:
   - Char1
   - Char2
   - Char3
+  - point
   layers:
   - Default
   - TransparentFX

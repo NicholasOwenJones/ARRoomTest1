@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &7200984034689223641
+--- !u!1 &8633836888522964134
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,47 +8,46 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 7200984034689223645}
-  - component: {fileID: 7200984034689223644}
-  - component: {fileID: 7200984034689223647}
-  - component: {fileID: 7200984034689223646}
-  - component: {fileID: -8424239451743147738}
+  - component: {fileID: 2750971052319439112}
+  - component: {fileID: 3723599788096495256}
+  - component: {fileID: 1304598377038892989}
+  - component: {fileID: 80556399862693371}
   m_Layer: 0
-  m_Name: CentPointRect
-  m_TagString: centre
+  m_Name: Cube4
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &7200984034689223645
+--- !u!4 &2750971052319439112
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7200984034689223641}
+  m_GameObject: {fileID: 8633836888522964134}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.05, z: 0}
-  m_LocalScale: {x: 1, y: 0.1, z: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0.1, y: 0.1, z: 0.1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!33 &7200984034689223644
+--- !u!33 &3723599788096495256
 MeshFilter:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7200984034689223641}
+  m_GameObject: {fileID: 8633836888522964134}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!23 &7200984034689223647
+--- !u!23 &1304598377038892989
 MeshRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7200984034689223641}
+  m_GameObject: {fileID: 8633836888522964134}
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
@@ -60,7 +59,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: efc4d777b8733944982d93e32231ade7, type: 2}
+  - {fileID: 2100000, guid: 737f17a128b40fa458e690c918843e81, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -81,48 +80,16 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!65 &7200984034689223646
+--- !u!65 &80556399862693371
 BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7200984034689223641}
+  m_GameObject: {fileID: 8633836888522964134}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &-8424239451743147738
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7200984034689223641}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b4a70081d880b4144a10a12885a20836, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Character1: {fileID: 3204536048569259138, guid: 656a3ef89ec6a3a4096a544086e82677,
-    type: 3}
-  Character2: {fileID: 7789768144416987630, guid: 7c8cbdaebd4dbbd4ca86793cd7253e47,
-    type: 3}
-  Character3: {fileID: 3910361508957656971, guid: f2d15c59edd0b294194ae9303eec9ad7,
-    type: 3}
-  TestBox: {fileID: 5394135059125894745, guid: 5642ceda5007bdf44a89c089b7312258, type: 3}
-  diagonalLenth: 0
-  player: {fileID: 0}
-  cube1: {fileID: 0}
-  cube2: {fileID: 0}
-  centre: {fileID: 0}
-  cube1transf: {x: 0, y: 0, z: 0}
-  cube2transf: {x: 0, y: 0, z: 0}
-  cent_transf: {x: 0, y: 0, z: 0}
-  zero: {x: 0, y: 0, z: 0, w: 0}
-  char1int: 0
-  char2int: 0
-  char3int: 0
-  char1Sounds: {fileID: 8300000, guid: 2cb5cc90d82cbd04e8751d61224fe746, type: 3}
