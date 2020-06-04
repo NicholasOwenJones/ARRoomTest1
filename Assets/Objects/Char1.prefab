@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 2577267456761890918}
   - component: {fileID: 1606012105691333079}
   - component: {fileID: 5271638539018377897}
-  - component: {fileID: -2695789645487117275}
   - component: {fileID: -1321147193165980867}
   m_Layer: 0
   m_Name: Char1
@@ -96,22 +95,6 @@ CapsuleCollider:
   m_Height: 2
   m_Direction: 1
   m_Center: {x: 0.000000059604645, y: 0, z: -0.00000008940697}
---- !u!114 &-2695789645487117275
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3204536048569259138}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 42032a35327b8c440aa293832eb37f1f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  TestingBox: {fileID: 5394135059125894745, guid: 5642ceda5007bdf44a89c089b7312258,
-    type: 3}
-  centre: {fileID: 0}
-  GameStart: {fileID: 0}
 --- !u!82 &-1321147193165980867
 AudioSource:
   m_ObjectHideFlags: 0
@@ -122,7 +105,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: de921abb429b1ef498da5610189d7042, type: 3}
+  m_audioClip: {fileID: 8300000, guid: ece55f588591e6f48adc00ecef450da4, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1

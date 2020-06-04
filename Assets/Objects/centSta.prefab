@@ -4688,7 +4688,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8461c68e03087e24b8e19f0bf5ab8fd6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  point_radius: 1
+  point_radius: 0.1
   moveSpeed: 2
   points:
   - {fileID: 3154742698320754958}
@@ -4710,6 +4710,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0f22de67600a4814f92fc7a56a748230, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  pointCubes: {fileID: 8633836888522964134, guid: da2292e9c75a1964cbd5230087d529b0,
+    type: 3}
 --- !u!1 &3027676098055637735
 GameObject:
   m_ObjectHideFlags: 0

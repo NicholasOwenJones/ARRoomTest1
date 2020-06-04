@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class ActGenerator : MonoBehaviour
 {
-    public float point_radius = 2;
-    public float moveSpeed = 10;
+    public float point_radius = 0.1f;
+    public float moveSpeed = 2;
     public GameObject[] points;
 
     public GameObject startPoint;
@@ -13,6 +13,8 @@ public class ActGenerator : MonoBehaviour
     GameObject character1;
 
     public int current = 0;
+
+
 
     // Start is called before the first frame update
     void Start()
