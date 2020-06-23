@@ -6,7 +6,15 @@ public class Director : MonoBehaviour
 {
 
     //GameObjects for Characters x2, GO for any other items in the scene (birds, fire, etc.)
+    public GameObject char1, char2;
     //A string array of points in space[]
+
+    //Character1(char1) movement list
+    public string[] char1move;
+
+    //Character2(char2) movement list
+    public string[] char2move;
+
     //A distance float
 
 
