@@ -4671,7 +4671,7 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3019848600968874735}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
@@ -4688,12 +4688,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8461c68e03087e24b8e19f0bf5ab8fd6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  point_radius: 0.1
-  moveSpeed: 2
+  startingPoint:
+    UseConstant: 1
+    ConstantValue: point-900
+    Variable: {fileID: 0}
+  point_radius:
+    UseConstant: 0
+    ConstantValue: 0.1
+    Variable: {fileID: 11400000, guid: 11ee047aa733623468978fbfa9f12853, type: 2}
+  moveSpeed:
+    UseConstant: 0
+    ConstantValue: 2
+    Variable: {fileID: 11400000, guid: 9874ed7d6fe7f574cb5a00503a4b44b4, type: 2}
   points:
   - {fileID: 3154742698320754958}
   - {fileID: 1347525447295047856}
   - {fileID: 3699154973919432559}
+  - {fileID: 3155803294837697263}
   startPoint: {fileID: 0}
   character1block: {fileID: 3204536048569259138, guid: 656a3ef89ec6a3a4096a544086e82677,
     type: 3}

@@ -7,10 +7,7 @@ using UnityEngine.EventSystems;
 
 public class GamesRules : MonoBehaviour
 {
-    public GameObject helloARContGO;
-    public GameObject centrePoint;
-    public GameObject location1;
-    public GameObject location2;
+    public GameObject helloARContGO, centrePoint, location1, location2;
     public Vector3 centre;
 
     public bool location_2_ready;

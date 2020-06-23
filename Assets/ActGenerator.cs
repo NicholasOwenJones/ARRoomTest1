@@ -4,8 +4,9 @@ using UnityEngine;
 
 public class ActGenerator : MonoBehaviour
 {
-    public float point_radius = 0.1f;
-    public float moveSpeed = 2;
+    public StringReference startingPoint;
+    public FloatReference point_radius;
+    public FloatReference moveSpeed;
     public GameObject[] points;
 
     public GameObject startPoint;
@@ -19,7 +20,8 @@ public class ActGenerator : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        startPoint = GameObject.Find("point-900");
+        //finds the first point to place the first character, places them down and gives them the tag Char1 so they can be located again.
+        startPoint = GameObject.Find("point900");
         Instantiate(character1block);
         character1 = GameObject.FindGameObjectWithTag("Char1");
     }
@@ -27,7 +29,8 @@ public class ActGenerator : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Vector3.Distance(points[current].transform.position, character1.transform.position) < point_radius)
+        //moves the 1st character to the correct location.
+        if (Vector3.Distance(points[current].transform.position, character1.transform.position) < point_radius.Value)
         {
             current++;
             if(current >= points.Length)
@@ -35,6 +38,6 @@ public class ActGenerator : MonoBehaviour
                 current = 0;
             }
         }
-        character1.transform.position = Vector3.MoveTowards(character1.transform.position, points[current].transform.position, Time.deltaTime * moveSpeed);
+        character1.transform.position = Vector3.MoveTowards(character1.transform.position, points[current].transform.position, Time.deltaTime * moveSpeed.Value);
     }
 }
