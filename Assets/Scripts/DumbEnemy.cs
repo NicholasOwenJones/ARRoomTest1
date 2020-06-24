@@ -13,8 +13,8 @@ public class DumbEnemy : MonoBehaviour
     public GameObject aGameObj; //empty GameObject filled by the array.
     public string[] pointsToLocate; //the array of point names to locate, needs to be filled in accurately to avoid missed locations and errors.
 
-    public StringReference objectName;
-    public StringVariable namer; 
+    public StringReference objectName; //Getter. Takes the string and 
+    public StringVariable namer; //Setter. Gives the current string in the pointToLocate list to the 
     
     private int currentPoint = 0; //used to track which point is being looked for in the array.
 
