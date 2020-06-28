@@ -5,24 +5,26 @@ using UnityEngine;
 public class Director : MonoBehaviour
 {
     // Current int for tracking everything.
-    public IntReference now;
-    public IntVariable notSet; //used for setting and changing the int so other objects can use it to check what they should be doing - if needed.
+    public IntReference nowDo;
+    public IntVariable nowDoSetter; //used for setting and changing the int so other objects can use it to check what they should be doing - if needed.
 
-    // A bool to stop things updating over and over.
+
+    // A bool to stop things updating over and over
     public bool updating;
 
     //GameObjects for Characters x2, GO for any other items in the scene (birds, fire, etc.)
     public GameObject char1, char2;
 
     //Character1(char1) movement list
-    public string[] char1move;
+    public string[] char1move; //list of points to move to: 000
+    public FloatVariable char1MoveSpeed; //for setting the speed the character should move to the next point.
 
     //Character2(char2) movement list
     public string[] char2move; //list of points to move to: 000
+    public FloatVariable char2MoveSpeed; //for setting the speed the character should move to the next point.
 
-
-    //A distance float
-
+    //The diagonal distance between the two stage points placed by the player. 
+    public FloatReference stageDistance; //Get this from StretchOut script.
 
     // Start is called before the first frame update
     void Start()
@@ -44,19 +46,19 @@ public class Director : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (updating)
+        if (updating) //sets whats happening in the story.
         {
-            if (now.Value == 1)
+            if (nowDo.Value == 1)
             {
                 updating = false;
                 Part1();
             }
-            else if (now.Value == 2)
+            else if (nowDo.Value == 2)
             {
                 updating = false;
                 Part2();
             }
-            else if (now.Value == 3)
+            else if (nowDo.Value == 3)
             {
                 updating = false;
                 Part3();

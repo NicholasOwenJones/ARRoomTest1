@@ -137,7 +137,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &230278148
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -389,6 +389,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe930538b09448944b5b864e867a3240, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  nowDo:
+    UseConstant: 0
+    ConstantValue: 0
+    Variable: {fileID: 11400000, guid: d64c60b6a77d536418a2e0d27c455e45, type: 2}
+  nowDoSetter: {fileID: 11400000, guid: d64c60b6a77d536418a2e0d27c455e45, type: 2}
+  updating: 0
+  char1: {fileID: 3204536048569259138, guid: 656a3ef89ec6a3a4096a544086e82677, type: 3}
+  char2: {fileID: 7789768144416987630, guid: 7c8cbdaebd4dbbd4ca86793cd7253e47, type: 3}
+  char1move: []
+  char1MoveSpeed: {fileID: 0}
+  char2move: []
+  char2MoveSpeed: {fileID: 0}
+  stageDistance:
+    UseConstant: 1
+    ConstantValue: 0
+    Variable: {fileID: 0}
 --- !u!4 &1645010930
 Transform:
   m_ObjectHideFlags: 0
@@ -506,7 +522,7 @@ GameObject:
   - component: {fileID: 1762411088}
   - component: {fileID: 1762411087}
   m_Layer: 0
-  m_Name: GameRulez
+  m_Name: SetUpRules
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -529,6 +545,8 @@ MonoBehaviour:
   centerPoint: {fileID: 3019848600968874735, guid: cb05c04aaaec6c34eb8d5db1dd79b3c4,
     type: 3}
   centCube: {fileID: 0}
+  floatLengthZ: {fileID: 11400000, guid: c7c7056c9032f5c499827904d92c1297, type: 2}
+  floatLengthX: {fileID: 11400000, guid: 02e6960d6632fa64f8a156c85845f9b4, type: 2}
   lengthZ: 0
   lengthX: 0
 --- !u!4 &1762411088

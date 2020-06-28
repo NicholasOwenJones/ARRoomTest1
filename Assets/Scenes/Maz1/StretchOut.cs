@@ -6,6 +6,8 @@ public class StretchOut : MonoBehaviour {
 
     public GameObject firstPoint, secondPoint, centerPoint, centCube;
 
+    public FloatVariable floatLengthZ, floatLengthX;
+
     public float lengthZ, lengthX;
 
     // Use this for initialization
@@ -22,6 +24,9 @@ public class StretchOut : MonoBehaviour {
 
         centCube = GameObject.FindWithTag("centre");
         centCube.transform.localScale = new Vector3(lengthX, 0.1f, lengthZ);
+
+        floatLengthX.Value = lengthX;
+        floatLengthZ.Value = lengthZ;
     }
 	
 	// Update is called once per frame
