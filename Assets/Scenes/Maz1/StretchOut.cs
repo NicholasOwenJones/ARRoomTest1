@@ -6,7 +6,7 @@ public class StretchOut : MonoBehaviour {
 
     public GameObject firstPoint, secondPoint, centerPoint, centCube;
 
-    public FloatVariable floatLengthZ, floatLengthX;
+    public FloatVariable floatLengthZ, floatLengthX, stageDistance;
 
     public float lengthZ, lengthX;
 
@@ -27,6 +27,8 @@ public class StretchOut : MonoBehaviour {
 
         floatLengthX.Value = lengthX;
         floatLengthZ.Value = lengthZ;
+
+        stageDistance.Value = lengthX + lengthZ / 2;
     }
 	
 	// Update is called once per frame

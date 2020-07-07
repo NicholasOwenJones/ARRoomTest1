@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class CharacterLocation : MonoBehaviour
 {
-    public StringReference point; //the current point name to move to.
+    public StringReference point; // the current point name to move to.
 
     public GameObject pointToMoveTo; // leave empty.
 

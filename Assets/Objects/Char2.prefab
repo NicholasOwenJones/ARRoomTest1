@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 2227038390425731591}
   - component: {fileID: 4009283628881387490}
   - component: {fileID: 4164062158258060988}
+  - component: {fileID: 3152057319297594281}
   m_Layer: 0
   m_Name: Char2
   m_TagString: Char2
@@ -94,3 +95,28 @@ CapsuleCollider:
   m_Height: 2
   m_Direction: 1
   m_Center: {x: 0.000000059604645, y: 0, z: -0.00000008940697}
+--- !u!114 &3152057319297594281
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7789768144416987630}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d48aa5d4807405d4096670715674de1d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  point:
+    UseConstant: 1
+    ConstantValue: 
+    Variable: {fileID: 11400000, guid: 6b275a309ea36654792b426bfbe87145, type: 2}
+  pointToMoveTo: {fileID: 0}
+  point_radius:
+    UseConstant: 1
+    ConstantValue: 0
+    Variable: {fileID: 0}
+  moveSpeed:
+    UseConstant: 1
+    ConstantValue: 0
+    Variable: {fileID: 0}

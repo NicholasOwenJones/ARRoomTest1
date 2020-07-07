@@ -17,14 +17,17 @@ public class Director : MonoBehaviour
 
     //Character1(char1) movement list
     public string[] char1move; //list of points to move to: 000
+    public StringVariable char1CurrentPoint; //the location to move to
     public FloatVariable char1MoveSpeed; //for setting the speed the character should move to the next point.
 
     //Character2(char2) movement list
     public string[] char2move; //list of points to move to: 000
+    public StringVariable char2CurrentPoint; //the location to move to
     public FloatVariable char2MoveSpeed; //for setting the speed the character should move to the next point.
 
     //The diagonal distance between the two stage points placed by the player. 
     public FloatReference stageDistance; //Get this from StretchOut script.
+    public FloatVariable pointRadius; //the size of each point to move to (StageDistance/20?)
 
     // Start is called before the first frame update
     void Start()
@@ -41,6 +44,8 @@ public class Director : MonoBehaviour
         {
             char2 = GameObject.FindGameObjectWithTag("Char1");
         }
+
+        pointRadius.Value = stageDistance.Value / 20; //Sets the area around each point that the characters should move to.
     }
 
     // Update is called once per frame
@@ -48,17 +53,17 @@ public class Director : MonoBehaviour
     {
         if (updating) //sets whats happening in the story.
         {
-            if (nowDo.Value == 1)
+            if (nowDo.Value == 0)
             {
                 updating = false;
                 Part1();
             }
-            else if (nowDo.Value == 2)
+            else if (nowDo.Value == 1)
             {
                 updating = false;
                 Part2();
             }
-            else if (nowDo.Value == 3)
+            else if (nowDo.Value == 2)
             {
                 updating = false;
                 Part3();
@@ -72,18 +77,27 @@ public class Director : MonoBehaviour
         //If the int updates then characters positions and sounds should update too.
     }
 
+    void Part0()
+    {
+        char1CurrentPoint.Value = char1move[0];
+        //position the character here with this audio.
+    }
+
     void Part1()
     {
+        char1CurrentPoint.Value = char1move[1];
         //position the character here with this audio.
     }
 
     void Part2()
     {
+        char1CurrentPoint.Value = char1move[2];
         //position the character here with this audio.
     }
 
     void Part3()
     {
+        char1CurrentPoint.Value = char1move[3];
         //position the character here with this audio.
     }
 }

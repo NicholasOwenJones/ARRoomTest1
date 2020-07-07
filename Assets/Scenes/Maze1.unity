@@ -397,14 +397,23 @@ MonoBehaviour:
   updating: 0
   char1: {fileID: 3204536048569259138, guid: 656a3ef89ec6a3a4096a544086e82677, type: 3}
   char2: {fileID: 7789768144416987630, guid: 7c8cbdaebd4dbbd4ca86793cd7253e47, type: 3}
-  char1move: []
-  char1MoveSpeed: {fileID: 0}
-  char2move: []
-  char2MoveSpeed: {fileID: 0}
+  char1move:
+  - point000
+  - point000
+  - point000
+  char1CurrentPoint: {fileID: 11400000, guid: 97f45043c4eec314692575ce2148cc19, type: 2}
+  char1MoveSpeed: {fileID: 11400000, guid: b180e75476f200d4c921702e19958775, type: 2}
+  char2move:
+  - 
+  - 
+  - 
+  char2CurrentPoint: {fileID: 11400000, guid: 6b275a309ea36654792b426bfbe87145, type: 2}
+  char2MoveSpeed: {fileID: 11400000, guid: e7c0c56f27d24094eb628c2983427be0, type: 2}
   stageDistance:
-    UseConstant: 1
+    UseConstant: 0
     ConstantValue: 0
-    Variable: {fileID: 0}
+    Variable: {fileID: 11400000, guid: 62eb29f666e8ec749bd1ebef0f5d20d6, type: 2}
+  pointRadius: {fileID: 0}
 --- !u!4 &1645010930
 Transform:
   m_ObjectHideFlags: 0
@@ -547,6 +556,7 @@ MonoBehaviour:
   centCube: {fileID: 0}
   floatLengthZ: {fileID: 11400000, guid: c7c7056c9032f5c499827904d92c1297, type: 2}
   floatLengthX: {fileID: 11400000, guid: 02e6960d6632fa64f8a156c85845f9b4, type: 2}
+  stageDistance: {fileID: 11400000, guid: 62eb29f666e8ec749bd1ebef0f5d20d6, type: 2}
   lengthZ: 0
   lengthX: 0
 --- !u!4 &1762411088

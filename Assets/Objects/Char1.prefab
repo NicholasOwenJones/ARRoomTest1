@@ -204,3 +204,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d48aa5d4807405d4096670715674de1d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  point:
+    UseConstant: 0
+    ConstantValue: 
+    Variable: {fileID: 11400000, guid: 97f45043c4eec314692575ce2148cc19, type: 2}
+  pointToMoveTo: {fileID: 0}
+  point_radius:
+    UseConstant: 0
+    ConstantValue: 2
+    Variable: {fileID: 0}
+  moveSpeed:
+    UseConstant: 0
+    ConstantValue: 0
+    Variable: {fileID: 0}
