@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 56b39da8c920a84499463f1f8104aa74, type: 3}
   m_Name: char2CurrentPoint
   m_EditorClassIdentifier: 
-  DeveloperDescription: 
-  Value: 
+  DeveloperDescription: Current point for Char2 to move to
+  Value: point005

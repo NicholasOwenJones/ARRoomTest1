@@ -4688,27 +4688,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8461c68e03087e24b8e19f0bf5ab8fd6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startingPoint:
-    UseConstant: 1
-    ConstantValue: point-900
-    Variable: {fileID: 0}
-  point_radius:
-    UseConstant: 0
-    ConstantValue: 0.1
-    Variable: {fileID: 11400000, guid: 11ee047aa733623468978fbfa9f12853, type: 2}
-  moveSpeed:
-    UseConstant: 0
-    ConstantValue: 2
-    Variable: {fileID: 11400000, guid: 9874ed7d6fe7f574cb5a00503a4b44b4, type: 2}
-  points:
-  - {fileID: 3154742698320754958}
-  - {fileID: 1347525447295047856}
-  - {fileID: 3699154973919432559}
-  - {fileID: 3155803294837697263}
-  startPoint: {fileID: 0}
   character1block: {fileID: 3204536048569259138, guid: 656a3ef89ec6a3a4096a544086e82677,
     type: 3}
-  current: 0
+  character2block: {fileID: 7789768144416987630, guid: 7c8cbdaebd4dbbd4ca86793cd7253e47,
+    type: 3}
+  choice1: {fileID: 8673478885882356984, guid: 3c1bef3a3321576429da4a86658381fc, type: 3}
+  point: {fileID: 0}
 --- !u!114 &2825740738322024482
 MonoBehaviour:
   m_ObjectHideFlags: 0
