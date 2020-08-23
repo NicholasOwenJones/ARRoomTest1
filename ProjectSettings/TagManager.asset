@@ -12,6 +12,10 @@ TagManager:
   - Char2
   - Char3
   - point
+  - Director
+  - Choice1
+  - Choice2
+  - ChoiceTrigger
   layers:
   - Default
   - TransparentFX

@@ -11,9 +11,9 @@ public class FloatVariable : ScriptableObject
 #endif
     public float Value;
 
-    public void SetValue(float value)
+    public void SetValue(float value) //creates a new float called value
     {
-        Value = value;
+        Value = value; //Sets Value to value.
     }
 
     public void SetValue(FloatVariable value)
